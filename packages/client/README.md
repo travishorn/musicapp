@@ -1,4 +1,4 @@
-# client
+# Music App Client
 
 ## Project setup
 ```

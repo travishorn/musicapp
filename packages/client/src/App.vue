@@ -1,31 +1,43 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+  <div class="app">
+    <SideNav />
+
+    <router-view />
   </div>
 </template>
 
+<script>
+import SideNav from '@/components/SideNav.vue';
+
+export default {
+  name: 'app',
+  components: {
+    SideNav,
+  },
+};
+</script>
+
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-}
+  @import url('https://fonts.googleapis.com/css?family=Roboto');
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+  * {
+    box-sizing: border-box;
+  }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
+  html { font-size: 18px; }
+
+  body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #140A25;
+    color: #EFEFEF;
+  }
+
+  .app {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-gap: 1rem;
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 1rem;
+  }
 </style>
